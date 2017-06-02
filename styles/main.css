@@ -1,0 +1,27 @@
+/* HTML
+<section class="hidden"> 
+	Code stuff here....
+</section>
+*/
+
+/* CSS
+.hidden {
+	position: absolute;
+	left: 5%;
+	right: 5%;
+	top: 5%;
+	height: 60vh;
+	display: none;
+	background-color: white;
+}
+*/
+
+/*JavaScript dropout if clicked outside of 
+var "yourSpecified"Element = document.getElementByClassName('hidden');
+document.addEvent('click', function(event) {
+	var isClickable = "yourSpecified"Element.contains(event.target);
+	if (!isClickable) {
+		document.getElementByClassName('hidden').style.display="none";
+	}
+});
+*/
