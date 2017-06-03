@@ -8,17 +8,25 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
-  <section class="hidden"></section>
+  <!--<section class="hidden"></section>-->
+  
   <!--https://www.w3schools.com/howto/howto_js_sidenav.asp -->
-  <div id="mySidenav" class="sidenav">
+  <!--https://www.w3schools.com/howto/howto_js_sidenav.asp -->
+  <!--Filter Overlay -->
+  <div id="myFilterOverlay" class="filterOverlay">
+    <!--Exit Filter Overlay "button" -->
     <a href="javascript:void(0)" class="exitFilterbtn" onclick="exitFilterNav()">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    
+    <!-- Overlay content-->
+    <div class="filterOverlay-content">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
   </div>
-  <!--Use any element to open the sidenav -->
-  <span onclick="openFilterOverlay()">open</span>
+  <!--Use any element to open the filterOverlay -->
+  <span onclick="openFilterOverlay()">Open Filter Overlay</span>
   
 </body>
 </html>
