@@ -1,3 +1,12 @@
+/* VARIABLES */
+// Set up request status code 
+const NOT_FOUND = 404;
+const OK = 200;
+const BAD = 400;
+
+var apiKey = "1788420828765e6eb1a60d9453e534d1"; // api Key 
+var Req; // variable that will store requests
+
 /*var filterOverlayElement = document.getElementsByClassName('hidden');
 document.addEvent('click', function(event) {
   var isClickable = filterOverlayElement.contains(event.target);
@@ -19,12 +28,14 @@ function exitFilterNav() {
 }
 /*End of example  https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
-/* Request access from the APi */
-// Set up request status code 
-const NOT_FOUND = 404;
-const OK = 200;
-const BAD = 400;
+/** Request top rated movies*/
+function request_TopRatedMovies() {
+    //URL: /discover/movie?sort_by=popularity.desc
 
+}
+/** Display only 3 top movies */
 
-// Get the most popular movies 
-//URL: /discover/movie?sort_by=popularity.desc
+/** Display details of the selected movie */
+function displayDetails() {
+
+}
