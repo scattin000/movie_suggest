@@ -5,6 +5,8 @@
     <title></title>
     <meta charset="utf-8">
     <meta name="author" content="DAZ">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="scripts/main.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
@@ -12,11 +14,24 @@
 <body>
     <!--<section class="hidden"></section>-->
     <section id="recommendationPage">
-        <!-- Set movie images as selectable links-->
-        <button id="topMovie" onclick="displayDetails()">
-            <!--Fill in the most popular movie image here-->
-            <img src="#" width="" height="">
-          </button>
+        <!-- Set movie images as selectable links
+        <button id="topMovies" onclick="displayDetails()">-->
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 id="result">Now Showing</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div tabindex="1" class="col-md-12" id="Movies">
+                        <div tabindex="2" id="moviePosters"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
 
         <img id="logo_creditMovieDB" src- "https://www.themoviedb.org/assets/static_cache/bb45549239e25f1770d5f76727bcd7c0/images/v4/logos/408x161-powered-by-rectangle-blue.png">
     </section>
@@ -39,5 +54,10 @@
     <span onclick="openFilterOverlay()">Open Filter Overlay</span>
 
 </body>
+<!-- Can I have two onloads in body -->
+<script type="text/javascript">
+    window.onload = baseUrl_Image();
+    window.onload = MostPopular();
+</script>
 
 </html>
