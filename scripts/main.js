@@ -29,6 +29,8 @@ var apiBase = 'http://api.themoviedb.org/3';*/
 
 // Function for calling the Most Popular Movie API 
 function MostPopular() {
+    //want this funtion to go on load as well 
+    baseUrl_Image();
     //setting up the new request
     var xhr = new XMLHttpRequest();
     //var urlPopular = apiBase + "/movie/popular" + apiKey;
