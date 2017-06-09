@@ -53,8 +53,9 @@ function MostPopular() {
         baseurl = window.movies_image_url;
         console.log(baseurl);
         posterSizes = window.movies_posters_sizes;
-        // how to set this to ONLY go through 3 movies? 
-        for (i in mydata.results) {
+        // only display top 3 movies
+        //for (i in mydata.results) {
+        for (var i = 0; i < 3; i++) {
             // variables for the details... need to store these to a different array?? OR need to make a seperate call?
             /*var movies_title = mydata.results[i].original_title;
             var movies_overview = mydata.results[i].overview;
