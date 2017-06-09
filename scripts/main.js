@@ -21,28 +21,28 @@ function exitFilterNav() {
 }
 /*End of example  https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
-//Variables 
-/*var apiKey = "1788420828765e6eb1a60d9453e534d1"; // api Key 
+// Variables for API Key
+var apiKey = "api_key=1788420828765e6eb1a60d9453e534d1"; // api Key 
 //var Req; // variable that will store requests
 var imageBase = 'http://image.tmdb.org/t/p/';
-var apiBase = 'http://api.themoviedb.org/3';*/
+var apiBase = 'http://api.themoviedb.org/3';
 
 // Function for calling the Most Popular Movie API 
 function MostPopular() {
     //want this funtion to go on load as well 
     baseUrl_Image();
+
+    var urlPopular = apiBase + '/movie/popular?' + apiKey;
     //setting up the new request
     var xhr = new XMLHttpRequest();
-    //var urlPopular = apiBase + "/movie/popular" + apiKey;
-    // var data = [];
+
     document.getElementById("result").innerHTML = 'Most Popular';
     document.getElementById("moviePosters").innerHTML = '';
     // making the request
     // figure out how to make these less than PG13 ratings only!!
-    xhr.open('GET', encodeURI('http://api.themoviedb.org/3/movie/popular?api_key=1788420828765e6eb1a60d9453e534d1'));
+    xhr.open('GET', encodeURI(urlPopular));
     xhr.onload = function() {
         if (xhr.status === 200) {
-            //data.push(xhr.responseText);
             // read the data in the JSON 
             var mydata = JSON.parse(xhr.responseText);
         } else {
