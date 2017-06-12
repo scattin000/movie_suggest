@@ -59,39 +59,55 @@ function MostPopular() {
             /*var movies_title = mydata.results[i].original_title;
             var movies_overview = mydata.results[i].overview;
             var movies_votes = mydata.results[i].vote_average;
-            var movies_rating = mydata.results[i].*/
+            var movies_rating = mydata.results[i].genre_ids*/
 
             var posters = mydata.results[i].poster_path;
             // creating the image to display  & everything to hold it
             var posters_Url = baseurl + posterSizes + posters;
             console.log(posters_Url);
+            // get the HTML element
             var div = document.getElementById('moviePosters');
+            // set up HTML for images 
             var imgDiv = document.createElement('div')
-            imgDiv.className = "col-md-7 movie_poster";
+            imgDiv.className = "col-md-7 movie_poster"; // class name
             var img = document.createElement('img');
             // actually setting the image 
             img.setAttribute('src', posters_Url);
+            //attach the image to the imgDiv section
             imgDiv.appendChild(img);
 
-            // set the data for each movie to display for the details page 
-            // setMovieDetails(mydata.results[i]);
+            // store details about the movie in this array 
+            //imageDescription is a property of the imgDiv object 
+            imgDiv.imageDescription = mydata.results[i];
+
+            imgDiv.onclick = function() {
+                console.log("hello");
+                // First Create the overlay page to display the informaion
+                var detailDisplay = document.createElement('section');
+                //create an id
+                detailDisplay.id = "movieDetails";
+
+            }
+
             /*
                         WANT THIS TO BE IN THE DETAILS OVERLAY 
                         var node = document.createElement("div");
-                        node.className = "col-md-5 movie_desc ";
+                        node.className = "col-md-5 movie_desc "; // set up the class
+                        // These are the details "descriptions" - creating for HTML
                         var textnode = document.createTextNode(movies_title);
                         var textOverview = document.createTextNode(movies_overview);
                         var textVote = document.createTextNode(movies_votes);
                         var textRatting = document.createTextNode('Ratings ');
 
+                        // add these items within the "div" node 
                         node.appendChild(textnode);
                         //headingforMovies.appendChild(textnode);
-                        node.appendChild(document.createElement('br'));
-                        node.appendChild(document.createElement('br'));
+                        //node.appendChild(document.createElement('br'));
+                        //node.appendChild(document.createElement('br'));
                         node.appendChild(textRatting)
                         node.appendChild(textVote);
-                        node.appendChild(document.createElement('br'));
-                        node.appendChild(document.createElement('br'));
+                        //node.appendChild(document.createElement('br'));
+                        //node.appendChild(document.createElement('br'));
                         node.appendChild(textOverview);
 
                         //console.log(mydata.results[i].original_title);
@@ -129,13 +145,9 @@ function baseUrl_Image() {
     xhr.send();
     //return movies_image_url;
 };
-
+/** display the sub page  */
 function setMovieDetails() {
     var movies_title = mydata.results[i].original_title;
     var movies_overview = mydata.results[i].overview;
     var movies_votes = mydata.results[i].vote_average;
-}
-
-function displayMovieDetails() {
-
 }
