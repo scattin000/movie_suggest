@@ -129,16 +129,10 @@ function MostPopular() {
                         var node = document.createElement("div");
                         node.className = "col-md-5 movie_desc "; // set up the class
                         // These are the details "descriptions" - creating for HTML
-                        var textnode = document.createTextNode(movies_title);
-                        var textOverview = document.createTextNode(movies_overview);
                         var textVote = document.createTextNode(movies_votes);
                         var textRatting = document.createTextNode('Ratings ');
 
-                        // add these items within the "div" node 
-                        node.appendChild(textnode);
-                        //headingforMovies.appendChild(textnode);
-                        //node.appendChild(document.createElement('br'));
-                        //node.appendChild(document.createElement('br'));
+                        // add these items within the "div" node
                         node.appendChild(textRatting)
                         node.appendChild(textVote);
                         //node.appendChild(document.createElement('br'));
