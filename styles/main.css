@@ -126,6 +126,10 @@ document.addEvent('click', function(event) {
 
 /*Main Screen CSS*/
 
-#recommendationPage {
-    background-color: "grey";
+#recommendationView {
+    background-color: black;
+}
+
+.movieDetails {
+    background-color: grey;
 }

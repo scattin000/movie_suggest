@@ -85,7 +85,7 @@ function MostPopular() {
                 // First Create the overlay page to display the informaion
                 var detailDisplay = document.createElement('section');
                 //create an id
-                detailDisplay.id = "movieDetails";
+                detailDisplay.className = "movieDetails";
 
             }
 
