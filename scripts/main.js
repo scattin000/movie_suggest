@@ -79,14 +79,49 @@ function MostPopular() {
             // store details about the movie in this array 
             //imageDescription is a property of the imgDiv object 
             imgDiv.imageDescription = mydata.results[i];
-
+            // this function is within the img (selecting) adding method to an instance
             imgDiv.onclick = function() {
-                console.log("hello");
+
                 // First Create the overlay page to display the informaion
                 var detailDisplay = document.createElement('section');
                 //create an id
                 detailDisplay.className = "movieDetails";
 
+                // set the title 
+                var titleDisplay = document.createTextNode(this.imageDescription.original_title);
+                var overviewDisplay = document.createTextNode(this.imageDescription.overview);
+
+                // append what we're working with to the detail display
+                this.appendChild(detailDisplay);
+                // append the details of the movie to the section
+                detailDisplay.appendChild(titleDisplay);
+                detailDisplay.appendChild(document.createElement('br'));
+                detailDisplay.appendChild(overviewDisplay);
+                // test the item to display 
+                //detailDisplay.innerHTML = "Hello";
+                /*
+                var node = document.createElement("section");
+                node.className = "divNode"; // set up the class
+                // These are the details "descriptions" - creating for HTML
+                var textnode = document.createTextNode(this.imageDescription.original_title); //movies_title);
+                var textOverview = document.createTextNode(this.imageDescription.movies_overview);
+                var textVote = document.createTextNode(this.imageDescription.movies_votes);
+                var textRatting = document.createTextNode('Ratings ');
+
+                // add these items within the "div" node 
+                node.appendChild(textnode);
+                //headingforMovies.appendChild(textnode);
+                node.appendChild(document.createElement('br'));
+                node.appendChild(document.createElement('br'));
+                node.appendChild(textRatting)
+                node.appendChild(textVote);
+                //node.appendChild(document.createElement('br'));
+                //node.appendChild(document.createElement('br'));
+                node.appendChild(textOverview);
+
+                //console.log(mydata.results[i].original_title);
+                document.getElementById("moviePosters").appendChild(node);
+                document.getElementById("moviePosters").appendChild(detailDisplay);*/
             }
 
             /*
@@ -145,9 +180,9 @@ function baseUrl_Image() {
     xhr.send();
     //return movies_image_url;
 };
-/** display the sub page  */
+/** display the sub page  
 function setMovieDetails() {
     var movies_title = mydata.results[i].original_title;
     var movies_overview = mydata.results[i].overview;
     var movies_votes = mydata.results[i].vote_average;
-}
+}*/
