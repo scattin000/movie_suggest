@@ -111,9 +111,7 @@ function MostPopular() {
         // only display top 3 movies
 
         for (var i = 0; i < 3; i++) {
-
             // variables for the details... need to store these to a different array?? OR need to make a seperate call?
-
             /*var movies_title = mydata.results[i].original_title;
 
             var movies_overview = mydata.results[i].overview;
@@ -125,56 +123,31 @@ function MostPopular() {
 
 
             var posters = mydata.results[i].poster_path;
-
             // creating the image to display  & everything to hold it
-
             var posters_Url = baseurl + posterSizes + posters;
-
             console.log(posters_Url);
-
             // get the HTML element
-
             var div = document.getElementById('moviePosters');
-
             // set up HTML for images 
-
             var imgDiv = document.createElement('div')
-
             imgDiv.className = "col-md-7 movie_poster"; // class name
-
             var img = document.createElement('img');
-
             // actually setting the image 
-
             img.setAttribute('src', posters_Url);
-
             //attach the image to the imgDiv section
-
             imgDiv.appendChild(img);
 
 
 
             // store details about the movie in this array 
-
             //imageDescription is a property of the imgDiv object 
-
             imgDiv.imageDescription = mydata.results[i];
-
             // this function is within the img (selecting) adding method to an instance
-
             imgDiv.onclick = function() {
-
-
-
                 // First Create the overlay page to display the informaion
-
                 var detailDisplay = document.createElement('section');
-
                 //create an id
-
                 detailDisplay.className = "movieDetails";
-
-
 
                 // set the title 
 

@@ -52,21 +52,13 @@ document.addEvent('click', function(event) {
 
 
 /*.hidden {
-
   position: absolute;
-
   left: 5%;
-
   right: 5%;
-
   top: 5%;
-
   height: 60vh;
-
   display: none;
-
   backface-visibility: hidden;
-
   background-color: blueviolet;
 
 }*/
