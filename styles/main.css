@@ -1,7 +1,80 @@
+/* HTML
+
+<section class="hidden"> 
+
+	Code stuff here....
+
+</section>
+
+*/
+
+
+/* CSS
+
+.hidden {
+
+	position: absolute;
+
+	left: 5%;
+
+	right: 5%;
+
+	top: 5%;
+
+	height: 60vh;
+
+	display: none;
+
+	background-color: white;
+
+}
+
+*/
+
+
+/*JavaScript dropout if clicked outside of 
+
+var "yourSpecified"Element = document.getElementByClassName('hidden');
+
+document.addEvent('click', function(event) {
+
+	var isClickable = "yourSpecified"Element.contains(event.target);
+
+	if (!isClickable) {
+
+		document.getElementByClassName('hidden').style.display="none";
+
+	}
+
+});
+
+*/
+
+
+/*.hidden {
+
+  position: absolute;
+
+  left: 5%;
+
+  right: 5%;
+
+  top: 5%;
+
+  height: 60vh;
+
+  display: none;
+
+  backface-visibility: hidden;
+
+  background-color: blueviolet;
+
+}*/
+
+
 /*Start of example https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
 .filterOverlay {
-  /*display: none;*/
     height: 100%;
     /* 100% Full-height */
     width: 0;
@@ -14,7 +87,7 @@
     top: 0;
     background-color: rgb(0, 0, 0);
     /* Black fallback color */
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.9);
     /* Black w/opacity */
     overflow-x: hidden;
     /* Disable horizontal scroll */
@@ -84,7 +157,18 @@
 
 /*Main Screen CSS*/
 
-#recommendationPage {
-    background-color: "grey";
-  /*height: 100%;*/
+#recommendationView {
+    background-color: black;
+}
+
+.movieDetails {
+    /*position: absolute;*/
+    /* float: left;*/
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    /*margin-top: -200px;*/
+    opacity: 0.8;
+    color: black;
+    width: 50%;
 }
