@@ -1,21 +1,14 @@
-/* VARIABLES */
-
-/*Start of example  https://www.w3schools.com/howto/howto_js_sidenav.asp*/
-
-function openFilterOverlay() {
-    document.getElementById("myFilterOverlay").style.width = "80%";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+function showFilter() {
+  document.getElementById('filterContainer').style.left = "0%";
 }
 
-
-
-function exitFilterNav() {
-    document.getElementById("myFilterOverlay").style.width = "0";
-    document.body.style.backgroundColor = "white";
+function hideFilter(theSection) {
+  document.getElementById('filterContainer').style.left = "110%";
 }
-/*End of example  https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
-
+function ignoreEvent(event) {
+  event.stopPropagation()
+}
 
 // Variables for API Key
 var apiKey = "api_key=1788420828765e6eb1a60d9453e534d1"; // api Key 

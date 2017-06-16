@@ -1,70 +1,16 @@
-/*Start of example https://www.w3schools.com/howto/howto_js_sidenav.asp */
-
-.filterOverlay {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0, 0, 0); /* Black fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the filterOverlay */
-}
-
-/* Position the content inside the overlay */
-.filterOverlay-content {
-    position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
-}
-
-
-/* The navigation links inside the overlay */
-.filterOverlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-/* When you mouse over the navigation links, change their color */
-.filterOverlay a:hover, .filterOverlay a:focus {
-    color: #f1f1f1;
-}
-
-
-/* Position and style the close button (top right corner) */
-.filterOverlay .exitFilterbtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-    .filterOverlay a {
-        font-size: 20px
-    }
-    .filterOverlay .exitFilterbtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-/*End of example  https://www.w3schools.com/howto/howto_js_sidenav.asp*/
-
-/*Main Screen CSS*/
-
 #recommendationView {
-    background-color: black;
+  position: absolute;
+  background-color: rgba(0,0,0,0.6);
+  height: 94%;
+  width: 93%;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  right: 5px;
+  overflow: hidden;
 }
 
+/*.movieDetails is part of the API stuff */
 .movieDetails {
     /*position: absolute;*/
     /* float: left;*/
@@ -75,4 +21,57 @@
     opacity: 0.8;
     color: black;
     width: 50%;
+}
+
+#filterContainer {
+  position: absolute;
+  height: 88%;
+  width: 78%;
+  padding: 40px 40px;  
+  background-color: rgba(0,0,0,0.4);
+  left: 110%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  transition-duration: 0.4s;
+}
+
+#filterContent {
+  position: absolute;
+  padding: 5px 10px;
+  height: 77%;
+  width: 70%;
+  border: 2px solid white;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 10;
+}
+
+.contentDiv {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 25%;
+  top: 15%;
+  right: 10%;
+  display: block;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  transition: 0.3s;
+}
+
+ section .filterbtn {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  width: 50%;
+  bottom: 0;
+  right: 25%;
+  background-color: #4CAF50;
+  color: black;
+  border: 2px solid white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 15px;
+  transition-duration: 0.4s;
 }
