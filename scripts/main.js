@@ -86,7 +86,7 @@ function MostPopular() {
                 var titleDisplay = document.createTextNode(this.imageDescription.original_title);
                 var overviewDisplay = document.createTextNode(this.imageDescription.overview);
                 // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
-                var movieGenres = document.createTextNode(this.imageDescription.genre_ids);
+                var movieGenres = document.createTextNode(this.imageDescription.genre_id);
 
                 // append what we're working with to the detail display
                 this.appendChild(detailDisplay);
