@@ -55,10 +55,6 @@ function MostPopular() {
         // only display top 3 movies
         for (var i = 0; i < 3; i++) {
             // variables for the details... need to store these to a different array?? OR need to make a seperate call?
-            /*var movies_title = mydata.results[i].original_title;
-            var movies_overview = mydata.results[i].overview;
-            var movies_votes = mydata.results[i].vote_average;
-            var movies_rating = mydata.results[i].genre_ids*/
 
             var posters = mydata.results[i].poster_path;
             // creating the image to display  & everything to hold it
@@ -80,59 +76,38 @@ function MostPopular() {
             imgDiv.imageDescription = mydata.results[i];
             // this function is within the img (selecting) adding method to an instance
             imgDiv.onclick = function() {
-                    // First Create the overlay page to display the informaion
-                    var detailDisplay = document.createElement('section');
-                    //create an id
-                    detailDisplay.className = "movieDetails";
+                // First Create the overlay page to display the informaion
+                var detailDisplay = document.createElement('section');
+                //create an id
+                detailDisplay.className = "movieDetails";
 
-                    // set the title 
+                // set the title 
 
-                    var titleDisplay = document.createTextNode(this.imageDescription.original_title);
-                    var overviewDisplay = document.createTextNode(this.imageDescription.overview);
-                    // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
-                    var movieGenres = document.createTextNode(this.imageDescription.genre_ids);
+                var titleDisplay = document.createTextNode(this.imageDescription.original_title);
+                var overviewDisplay = document.createTextNode(this.imageDescription.overview);
+                // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
+                var movieGenres = document.createTextNode(this.imageDescription.genre_ids);
 
-                    // append what we're working with to the detail display
-                    this.appendChild(detailDisplay);
+                // append what we're working with to the detail display
+                this.appendChild(detailDisplay);
 
-                    // append the details of the movie to the section
-                    detailDisplay.appendChild(titleDisplay);
-                    detailDisplay.appendChild(document.createElement('br'));
-                    detailDisplay.appendChild(overviewDisplay);
-                    // detailDisplay.appendChild(ratingVotes);
-                    detailDisplay.appendChild(document.createElement('br'));
-                    detailDisplay.appendChild(movieGenres);
+                // append the details of the movie to the section
+                detailDisplay.appendChild(titleDisplay);
+                detailDisplay.appendChild(document.createElement('br'));
+                detailDisplay.appendChild(overviewDisplay);
+                // detailDisplay.appendChild(ratingVotes);
+                detailDisplay.appendChild(document.createElement('br'));
+                detailDisplay.appendChild(movieGenres);
 
-                    // test the item to display 
-                    //detailDisplay.innerHTML = "Hello";
-                    /*
-                    //console.log(mydata.results[i].original_title);
-                    document.getElementById("moviePosters").appendChild(node);
-                    document.getElementById("moviePosters").appendChild(detailDisplay);*/
-                }
+                // test the item to display 
+                //detailDisplay.innerHTML = "Hello";
                 /*
-                        WANT THIS TO BE IN THE DETAILS OVERLAY 
-                        var node = document.createElement("div");
-                        node.className = "col-md-5 movie_desc "; // set up the class
-
-                        // These are the details "descriptions" - creating for HTML
-                        var textVote = document.createTextNode(movies_votes);
-                        var textRatting = document.createTextNode('Ratings ');
-
-                        // add these items within the "div" node
-                        node.appendChild(textRatting)
-                        node.appendChild(textVote);
-
-                        //node.appendChild(document.createElement('br'));
-                        //node.appendChild(document.createElement('br'));
-                        node.appendChild(textOverview);
-
-                        //console.log(mydata.results[i].original_title);
-                         document.getElementById("moviePosters").appendChild(node);
-*/
+                //console.log(mydata.results[i].original_title);
+                document.getElementById("moviePosters").appendChild(node);
+                document.getElementById("moviePosters").appendChild(detailDisplay);*/
+            }
             document.getElementById("moviePosters").appendChild(imgDiv);
         }
-        //document.getElementById("result").innerHTML = mydata;
     };
     xhr.send();
 };
@@ -162,10 +137,3 @@ function baseUrl_Image() {
     xhr.send();
     //return movies_image_url;
 };
-
-/** display the sub page  
-function setMovieDetails() {
-    var movies_title = mydata.results[i].original_title;
-    var movies_overview = mydata.results[i].overview;
-    var movies_votes = mydata.results[i].vote_average;
-}*/
