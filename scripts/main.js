@@ -63,19 +63,19 @@ function MostPopular() {
             // get the HTML element
             var div = document.getElementById('moviePosters');
             // set up HTML for images 
-            var imgDiv = document.createElement('div')
-            imgDiv.className = "col-md-7 movie_poster"; // class name
+            var imgContainer = document.createElement('div')
+            imgContainer.className = "movie_poster"; // class name
             var img = document.createElement('img');
             // actually setting the image 
             img.setAttribute('src', posters_Url);
-            //attach the image to the imgDiv section
-            imgDiv.appendChild(img);
+            //attach the image to the imgContainer section
+            imgContainer.appendChild(img);
 
             // store details about the movie in this array 
-            //imageDescription is a property of the imgDiv object 
-            imgDiv.imageDescription = mydata.results[i];
+            //imageDescription is a property of the imgContainer object 
+            imgContainer.imageDescription = mydata.results[i];
             // this function is within the img (selecting) adding method to an instance
-            imgDiv.onclick = function() {
+            imgContainer.onclick = function() {
                 // First Create the overlay page to display the informaion
                 var detailDisplay = document.createElement('section');
                 //create an id
@@ -106,7 +106,7 @@ function MostPopular() {
                 document.getElementById("moviePosters").appendChild(node);
                 document.getElementById("moviePosters").appendChild(detailDisplay);*/
             }
-            document.getElementById("moviePosters").appendChild(imgDiv);
+            document.getElementById("moviePosters").appendChild(imgContainer);
         }
     };
     xhr.send();
