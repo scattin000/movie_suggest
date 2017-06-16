@@ -15,8 +15,6 @@ function exitFilterNav() {
 }
 /*End of example  https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
-
-
 // Variables for API Key
 var apiKey = "api_key=1788420828765e6eb1a60d9453e534d1"; // api Key 
 //var Req; // variable that will store requests
@@ -62,8 +60,6 @@ function MostPopular() {
             var movies_votes = mydata.results[i].vote_average;
             var movies_rating = mydata.results[i].genre_ids*/
 
-
-
             var posters = mydata.results[i].poster_path;
             // creating the image to display  & everything to hold it
             var posters_Url = baseurl + posterSizes + posters;
@@ -79,62 +75,42 @@ function MostPopular() {
             //attach the image to the imgDiv section
             imgDiv.appendChild(img);
 
-
-
             // store details about the movie in this array 
             //imageDescription is a property of the imgDiv object 
             imgDiv.imageDescription = mydata.results[i];
             // this function is within the img (selecting) adding method to an instance
             imgDiv.onclick = function() {
-                // First Create the overlay page to display the informaion
-                var detailDisplay = document.createElement('section');
-                //create an id
-                detailDisplay.className = "movieDetails";
+                    // First Create the overlay page to display the informaion
+                    var detailDisplay = document.createElement('section');
+                    //create an id
+                    detailDisplay.className = "movieDetails";
 
-                // set the title 
+                    // set the title 
 
-                var titleDisplay = document.createTextNode(this.imageDescription.original_title);
-                var overviewDisplay = document.createTextNode(this.imageDescription.overview);
+                    var titleDisplay = document.createTextNode(this.imageDescription.original_title);
+                    var overviewDisplay = document.createTextNode(this.imageDescription.overview);
+                    // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
+                    var movieGenres = document.createTextNode(this.imageDescription.genre_ids);
 
+                    // append what we're working with to the detail display
+                    this.appendChild(detailDisplay);
 
+                    // append the details of the movie to the section
+                    detailDisplay.appendChild(titleDisplay);
+                    detailDisplay.appendChild(document.createElement('br'));
+                    detailDisplay.appendChild(overviewDisplay);
+                    // detailDisplay.appendChild(ratingVotes);
+                    detailDisplay.appendChild(document.createElement('br'));
+                    detailDisplay.appendChild(movieGenres);
 
-                // append what we're working with to the detail display
-                this.appendChild(detailDisplay);
-
-                // append the details of the movie to the section
-                detailDisplay.appendChild(titleDisplay);
-                detailDisplay.appendChild(document.createElement('br'));
-                detailDisplay.appendChild(overviewDisplay);
-
-                // test the item to display 
-                //detailDisplay.innerHTML = "Hello";
+                    // test the item to display 
+                    //detailDisplay.innerHTML = "Hello";
+                    /*
+                    //console.log(mydata.results[i].original_title);
+                    document.getElementById("moviePosters").appendChild(node);
+                    document.getElementById("moviePosters").appendChild(detailDisplay);*/
+                }
                 /*
-                var node = document.createElement("section");
-                node.className = "divNode"; // set up the class
-                // These are the details "descriptions" - creating for HTML
-                var textnode = document.createTextNode(this.imageDescription.original_title); //movies_title);
-                var textOverview = document.createTextNode(this.imageDescription.movies_overview);
-                var textVote = document.createTextNode(this.imageDescription.movies_votes);
-                var textRatting = document.createTextNode('Ratings ');
-
-
-                // add these items within the "div" node 
-                node.appendChild(textnode);
-
-                //headingforMovies.appendChild(textnode);
-                node.appendChild(document.createElement('br'));
-                node.appendChild(document.createElement('br'));
-                node.appendChild(textRatting)
-                node.appendChild(textVote);
-                //node.appendChild(document.createElement('br'));
-                //node.appendChild(document.createElement('br'));
-                node.appendChild(textOverview);
-
-                //console.log(mydata.results[i].original_title);
-                document.getElementById("moviePosters").appendChild(node);
-                document.getElementById("moviePosters").appendChild(detailDisplay);*/
-            }
-            /*
                         WANT THIS TO BE IN THE DETAILS OVERLAY 
                         var node = document.createElement("div");
                         node.className = "col-md-5 movie_desc "; // set up the class
@@ -142,8 +118,6 @@ function MostPopular() {
                         // These are the details "descriptions" - creating for HTML
                         var textVote = document.createTextNode(movies_votes);
                         var textRatting = document.createTextNode('Ratings ');
-
-
 
                         // add these items within the "div" node
                         node.appendChild(textRatting)
