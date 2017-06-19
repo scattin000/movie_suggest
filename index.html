@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title></title>
     <meta charset="utf-8">
@@ -10,46 +9,52 @@
     <script src="scripts/main.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
-
-<body onload="MostPopular()">
-    <!--<section class="hidden"></section>-->
-    <section id="recommendationView">
-        <!-- Set movie images as selectable links-->
-        <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 id="result">Now Showing</h2>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div tabindex="1" class="col-md-12" id="Movies">
-                        <div tabindex="2" id="moviePosters"></div>
-                    </div>
-                </div>
-            </div>
+<body onload="MostPopular()" id="recommendationView">
+  <section id="recommendationView" class="recommendationViewClass">
+    <!-- Create the Filter Container which will hold the Filter content overlay -->
+    <section id="filterContainer" onclick="hideFilter(this)">
+    <!-- Create the Filter Content container which will overlay and hold the Filter Content Section -->
+      <section id="filterContent" onclick="ignoreEvent(event)">
+        <!-- Create the Content Div which will allow the user to filter movies according to 
+        rating, stars, genre and year -->
+        <div class="contentDiv">
+          <!-- MOVIE TITLE not needed except to give developers a visual for contentDiv -->
+          <ul href="#">Movie Title</ul>
+          <!-- For RATING the user may drag and drop selector to selected rating,
+          which will allow user to see movies of that rating -->
+          <ul href="#">Rating</ul>
+          <!-- For STARS, user will select movies by how many stars they were rated by IMDB -->
+          <ul href="#">Stars</ul>
+          <!-- For GENRE user will select from a genre icon list. -->
+          <ul href="#">Genre</ul>
+          <!-- For YEAR use a drag and drop selector that will scroll left and right until user drops on preferred year. -->
+          <ul href="#">Year</ul>
         </div>
-        <!--container-->
-        <img id="logo_creditMovieDB" src- "https://www.themoviedb.org/assets/static_cache/bb45549239e25f1770d5f76727bcd7c0/images/v4/logos/408x161-powered-by-rectangle-blue.png">
+      </section>
     </section>
-
-    <!--https://www.w3schools.com/howto/howto_js_sidenav.asp -->
-    <!--https://www.w3schools.com/howto/howto_js_sidenav.asp -->
-    <!--Filter Overlay -->
-    <div id="myFilterOverlay" class="filterOverlay">
-        <!--Exit Filter Overlay "button" -->
-        <a href="javascript:void(0)" class="exitFilterbtn" onclick="exitFilterNav()">&times;</a>
-        <!-- Overlay content-->
-        <div class="filterOverlay-content">
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+    <!-- Set movie images as selectable links
+    <button id="topMovies" onclick="displayDetails()">-->
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12">
+          <h2 id="result">Now Showing</h2>
         </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div tabindex="1" class="col-md-12" id="Movies">
+            <div tabindex="2" id="moviePosters"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!--Use any element to open the filterOverlay -->
-    <span onclick="openFilterOverlay()">Open Filter Overlay</span>
+    <!--container-->
+    <img id="logo_creditMovieDB" src- "https://www.themoviedb.org/assets/static_cache/bb45549239e25f1770d5f76727bcd7c0/images/v4/logos/408x161-powered-by-rectangle-blue.png">
+    
+    <!-- For Filter button, it needs to overlay filterContainer over recommendationView, 
+    and allow select out to close filterContainer overlay. -->
+    <div><button class="filterbtn" onclick="showFilter()">Filter</button></div>
+  </section>
 </body>
-
 </html>
