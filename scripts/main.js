@@ -87,7 +87,7 @@ function MostPopular() {
                 var overviewDisplay = document.createTextNode(this.imageDescription.overview);
                 // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
                 var movieGenres = document.createTextNode(this.imageDescription.genre_id);
-
+                // INSERT FUNCTION HERE TO CHANGE THE GENREID to the string 
                 // append what we're working with to the detail display
                 this.appendChild(detailDisplay);
 
