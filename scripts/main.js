@@ -1,13 +1,13 @@
 function showFilter() {
-  document.getElementById('filterContainer').style.left = "0%";
+    document.getElementById('filterContainer').style.left = "0%";
 }
 
 function hideFilter(theSection) {
-  document.getElementById('filterContainer').style.left = "110%";
+    document.getElementById('filterContainer').style.left = "110%";
 }
 
 function ignoreEvent(event) {
-  event.stopPropagation()
+    event.stopPropagation()
 }
 
 // Variables for API Key
@@ -15,7 +15,6 @@ var apiKey = "api_key=1788420828765e6eb1a60d9453e534d1"; // api Key
 //var Req; // variable that will store requests
 var imageBase = 'http://image.tmdb.org/t/p/';
 var apiBase = 'http://api.themoviedb.org/3';
-
 
 // Function for calling the Most Popular Movie API 
 function MostPopular() {
@@ -71,13 +70,21 @@ function MostPopular() {
             imgContainer.imageDescription = mydata.results[i];
             // this function is within the img (selecting) adding method to an instance
             imgContainer.onclick = function() {
+
+                // create the background for the blurred view - this will be the selectable 
+                var blurredView = document.createElement('section');
+                // create an event to hide the details 
+                blurredView.addEventListener('touchstart', hide);
+                // set class name 
+                blurredView.className = "blurred_View";
                 // First Create the overlay page to display the informaion
                 var detailDisplay = document.createElement('section');
+                //make sure selecting this area does nothing
+                detailDisplay.addEventListener('touchstart', doNothing);
                 //create an id
                 detailDisplay.className = "movieDetails";
 
                 // set the title 
-
                 var titleDisplay = document.createTextNode(this.imageDescription.original_title);
                 var overviewDisplay = document.createTextNode(this.imageDescription.overview);
                 // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
@@ -91,15 +98,15 @@ function MostPopular() {
                 detailDisplay.appendChild(document.createElement('br'));
                 detailDisplay.appendChild(overviewDisplay);
                 // detailDisplay.appendChild(ratingVotes);
-                detailDisplay.appendChild(document.createElement('br'));
-                detailDisplay.appendChild(movieGenres);
+                /*detailDisplay.appendChild(document.createElement('br'));
+                detailDisplay.appendChild(movieGenres);*/
 
-                // test the item to display 
-                //detailDisplay.innerHTML = "Hello";
-                /*
-                //console.log(mydata.results[i].original_title);
-                document.getElementById("moviePosters").appendChild(node);
-                document.getElementById("moviePosters").appendChild(detailDisplay);*/
+                //try this to get the blurred view to append to the body  
+                document.getElementById('recommendationView').appendChild(blurredView);
+                // hack to deal with Chrome problems
+                setTimeout(function() {
+                    blurredView.style.opacity = 1.0;
+                }, 1)
             }
             document.getElementById("moviePosters").appendChild(imgContainer);
         }
@@ -107,6 +114,28 @@ function MostPopular() {
     xhr.send();
 };
 
+/**
+ * Hide
+ */
+function hide() {
+    event.stopPropagation();
+    blurredView.addEventListener("transitioned", removeBluredView);
+    blurredView.style.opacity = 0.0;
+}
+/**
+ * Hide: allows the display to hide after the blurred section is selected
+ */
+function removeBluredView() {
+    document.getElementById('recommendationView').removeChild(blurredView);
+    blurredView = null;
+}
+
+/**
+ * Do Nothing: Makes sure that on selecting movie details the image doesn't close 
+ */
+function doNothing(event) {
+    event.stopPropagation();
+}
 // Config function for Movie Poster API. 
 function baseUrl_Image() {
     var xhr = new XMLHttpRequest();
