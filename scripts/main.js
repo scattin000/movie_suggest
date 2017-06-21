@@ -71,12 +71,6 @@ function MostPopular() {
             // this function is within the img (selecting) adding method to an instance
             imgContainer.onclick = function() {
 
-                // create the background for the blurred view - this will be the selectable 
-                var blurredView = document.createElement('section');
-                // create an event to hide the details 
-                blurredView.addEventListener('touchstart', hide);
-                // set class name 
-                blurredView.className = "blurred_View";
                 // First Create the overlay page to display the informaion
                 var detailDisplay = document.createElement('section');
                 //make sure selecting this area does nothing
@@ -84,25 +78,29 @@ function MostPopular() {
                 //create an id
                 detailDisplay.className = "movieDetails";
 
+                // create the background for the blurred view - this will be the selectable 
+                var blurredView = document.createElement('section');
+                // create an event to hide the details 
+                blurredView.addEventListener('touchstart', hide);
+                // set class name 
+                blurredView.className = "blurred_View";
+
                 // set the title 
                 var titleDisplay = document.createTextNode(this.imageDescription.original_title);
                 var overviewDisplay = document.createTextNode(this.imageDescription.overview);
-                // var ratingVotes = document.createTextNode(this.imageDescription.vote_average);
                 var movieGenres = document.createTextNode(this.imageDescription.genre_id);
-                // INSERT FUNCTION HERE TO CHANGE THE GENREID to the string 
+
                 // append what we're working with to the detail display
-                this.appendChild(detailDisplay);
+                blurredView.appendChild(detailDisplay);
 
                 // append the details of the movie to the section
                 detailDisplay.appendChild(titleDisplay);
                 detailDisplay.appendChild(document.createElement('br'));
                 detailDisplay.appendChild(overviewDisplay);
-                // detailDisplay.appendChild(ratingVotes);
-                /*detailDisplay.appendChild(document.createElement('br'));
-                detailDisplay.appendChild(movieGenres);*/
 
                 //try this to get the blurred view to append to the body  
                 document.getElementById('recommendationView').appendChild(blurredView);
+
                 // hack to deal with Chrome problems
                 setTimeout(function() {
                     blurredView.style.opacity = 1.0;
@@ -119,7 +117,10 @@ function MostPopular() {
  */
 function hide() {
     event.stopPropagation();
-    blurredView.addEventListener("transitioned", removeBluredView);
+    // selecting CSS selector
+    var blurredView = document.querySelector('.blurred_View');
+
+    blurredView.addEventListener('transitioned', removeBluredView);
     blurredView.style.opacity = 0.0;
 }
 /**
