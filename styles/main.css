@@ -34,6 +34,10 @@
     transition: opacity 1s;
 }
 
+.movie_title {
+    margin-bottom: 10px;
+}
+
 #filterContainer {
     position: absolute;
     height: 88%;

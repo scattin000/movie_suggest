@@ -85,8 +85,12 @@ function MostPopular() {
                 // set class name 
                 blurredView.className = "blurred_View";
 
-                // set the title 
-                var titleDisplay = document.createTextNode(this.imageDescription.original_title);
+                // set the title in a span
+                var titleDisplaySpan = document.createElement('span');
+                titleDisplaySpan.innerText = this.imageDescription.original_title;
+                // class name so we can edit the css 
+                titleDisplaySpan.className = "movie_title";
+
                 var overviewDisplay = document.createTextNode(this.imageDescription.overview);
                 var movieGenres = document.createTextNode(this.imageDescription.genre_id);
 
@@ -94,8 +98,9 @@ function MostPopular() {
                 blurredView.appendChild(detailDisplay);
 
                 // append the details of the movie to the section
-                detailDisplay.appendChild(titleDisplay);
-                detailDisplay.appendChild(document.createElement('br'));
+                detailDisplay.appendChild(titleDisplaySpan);
+
+                //detailDisplay.appendChild(document.createElement('br'));
                 detailDisplay.appendChild(overviewDisplay);
 
                 //try this to get the blurred view to append to the body  
