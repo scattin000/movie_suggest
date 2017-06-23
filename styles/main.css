@@ -106,3 +106,58 @@ section .filterbtn {
     font-size: 15px;
     transition-duration: 0.4s;
 }
+/**********STAR RATING************/
+.starRating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+
+.starRating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.0em;
+  font-size: 1.5em;
+}
+
+.starRating > span:hover,
+.starRating > span:hover ~ span {
+  color: transparent;
+}
+
+.starRating > span:hover:before, 
+.starRating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: gold;
+  font-size: 0.9em;
+}
+
+/*********MOVIE RATING**************/
+.movieRating {
+  unicode-bidi: bidi-override;
+  direction: ltr;
+  text-align: center;
+}
+
+.movieRating > span {
+  display: inline-block;
+  position: relative;
+  /*width: 1.1em;*/
+}
+
+.movieRating > span:hover,
+.movieRating > span:hover ~ span {
+  color: transparent;
+}
+
+.movieRating > span:hover:before, 
+.movieRating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  /*left: 0;*/
+  color: blue;
+}
+
+/*************************************/

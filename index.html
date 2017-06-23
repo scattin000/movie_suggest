@@ -18,19 +18,29 @@
             <!-- Create the Filter Content container which will overlay and hold the Filter Content Section -->
             <section id="filterContent" onclick="ignoreEvent(event)">
                 <!-- Create the Content Div which will allow the user to filter movies according to 
-        rating, stars, genre and year -->
+                rating, stars, genre and year -->
                 <div class="contentDiv">
                     <!-- MOVIE TITLE not needed except to give developers a visual for contentDiv -->
-                    <ul href="#">Movie Title</ul>
+                    <ul>Movie Title</ul>
                     <!-- For RATING the user may drag and drop selector to selected rating,
-          which will allow user to see movies of that rating -->
-                    <ul href="#">Rating</ul>
-                    <!-- For STARS, user will select movies by how many stars they were rated by IMDB -->
-                    <ul href="#">Stars</ul>
+                    which will allow user to see movies of that rating -->
+                    <ol class="movieRating">
+                    <span class="filterR"> [R] </span><span class="filterPG13"> [PG-13] </span>
+                    <span class="filterPG"> [PG] </span><span class="filterG"> [G] </span></ol>
+                    <!-- For STARS, user will select movies by how many stars they were rated by IMDB 
+                    https://css-tricks.com/star-ratings/ -->
+                    <ul class="starRating">
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    <!-- <img src="defaultStarimage.png" onclick="starCountSelect()" /> --></ul>
                     <!-- For GENRE user will select from a genre icon list. -->
-                    <ul href="#">Genre</ul>
+                    <ul>Genre <br>
+                    <button class="genre">Fantasy</button>
+                    <button class="genre">Action</button>
+                    <button class="genre">Comedy</button>
+                    <button class="genre">SciFi</button>
                     <!-- For YEAR use a drag and drop selector that will scroll left and right until user drops on preferred year. -->
-                    <ul href="#">Year</ul>
+                    <ul id="slider">Year
+                    <ul><input type="range" name="yearSlider"></ul></ul>
                 </div>
             </section>
         </section>
