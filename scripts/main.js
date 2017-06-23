@@ -15,6 +15,10 @@ var apiKey = "api_key=1788420828765e6eb1a60d9453e534d1"; // api Key
 //var Req; // variable that will store requests
 var imageBase = 'http://image.tmdb.org/t/p/';
 var apiBase = 'http://api.themoviedb.org/3';
+//var blurredView = document.querySelector('.blurred_View');
+
+
+
 
 // Function for calling the Most Popular Movie API 
 function MostPopular() {
@@ -125,13 +129,14 @@ function hide() {
     // selecting CSS selector
     var blurredView = document.querySelector('.blurred_View');
 
-    blurredView.addEventListener('transitioned', removeBluredView);
+    blurredView.addEventListener('transitionend', removeBluredView);
     blurredView.style.opacity = 0.0;
 }
 /**
  * Hide: allows the display to hide after the blurred section is selected
  */
 function removeBluredView() {
+    var blurredView = document.querySelector('.blurred_View');
     document.getElementById('recommendationView').removeChild(blurredView);
     blurredView = null;
 }
