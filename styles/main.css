@@ -40,6 +40,8 @@
 .movie_title {
     margin-bottom: 10px;
     display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 #filterContainer {
